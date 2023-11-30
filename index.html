@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Super Equipt</title>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <div class="logo">
+                <img src="pics/SuperEqupitLogo.png" alt="logo">
+            </div>
+            <h1>Super Equipt</h1>
+        </div>
+    </header>
+
+    <main>
+
+        <h2>Get Equipt-Stay Courageous</h2>
+        <p>Super Equipt has you sorted, whether you're going on a short and sweet adventure or your next epic adventure.
+            Whatever the adventure might be, Super Equipt will keep your adventures organised and stress free</p>
+        <div id="table">
+            <table>
+                <tr>
+                    <th>Activities</th>
+                    <th>Equipment</th>
+                </tr>
+                <tr>
+                    <td><img id="activityPic" src="pics/running.jpg" alt="person running">
+                        <form id="activityForm">
+                            <label for="activities">Please enter your activity</label>
+                            <input id="activities" type="text" name="Activity" required minlength="1">
+                            <input class="btn" type="submit" value="Enter">
+                        </form>
+                    </td>
+                    <td><img id="equipmentPic" src="pics/bike.jpg" alt="bike in sunset">
+                        <form id="equipmentForm">
+                            <label for="equipment">What equipment will you need?</label>
+                            <input id="equipment" type="text" name="Equipment" required minlength="1">
+                            <input class="btn" type="submit" value="Enter">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Activity Log</th>
+                    <th>Equipment Log</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="activityLog">
+                            <ul id="activitySubmit">
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="equipmentLog">
+                            <ul id="equipmentSubmit">
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Accommodation</th>
+                    <th>Food</th>
+                </tr>
+                <tr>
+                    <td><img id="accommodatin" src="pics/accommodation.jpg" alt="cave with moon in view"></td>
+                    <td><img id="food" src="pics/food.jpg" alt="plater of food"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- HTML form for user input -->
+        <form id="searchForm">
+            <label for="demo">activity</label>
+            <input type="text" id="demo1" name="demo1">
+            <label for="demo">equipment</label>
+            <input type="text" id="demo2" name="demo2">
+            <input type="submit" value="submit">
+        </form>
+
+        <h3>Where will your next adventure take place?</h3>
+        <p>To help you get prepared check out the links below</p>
+        <div id="travelDestinations">
+            <a href="https://www.visittheusa.com.au/" target="_blank">
+                <img class="flag" src="pics/usaFlag.jpg" alt="USA flag">
+            </a>
+            <a href="https://www.australia.com/en" target="_blank">
+                <img class="flag" src="pics/ausFlag.jpg" alt="Australian Flag">
+            </a>
+            <a href="https://www.visitbritain.com/en/plan-your-trip/budgeting-tips" target="_blank">
+                <img class="flag" src="pics/ukFlag.jpg" alt="uk Flag">
+            </a>
+            <a href="https://www.eurail.com/en" target="_blank">
+                <img class="flag" src="pics/europeTrain.jpg" alt="Train">
+            </a>
+        </div>
+
+            <ul>
+                <li>30 days is the approximate time one can live without food</li>
+                <li>Add 37 to the number of chirps a cricket makes in 15 seconds to determine the approximate
+                    temperature</li>
+                <li>Humans should have eight cups of water each day</li>
+                <li>The body loses heat twenty-five times faster in water than it does in air</li>
+                <li>Three is the universal signal number for distress.</li>
+                <li>At the moment you realize you are lost you should S.T.O.P. (Sit, Think, Observe, and Plan)</li>
+                <li>1 WHISTLE BLAST is International Whistle Code for “Where are you?</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <input type="text" id="searchInput" placeholder="Search for a food">
+    <button id="findFood">Search</button>
+    
+    <ul id="foodList"></ul>
+    </footer>
+    
+</body>
+
+</html>
