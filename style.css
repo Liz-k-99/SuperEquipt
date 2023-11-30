@@ -1,0 +1,103 @@
+body{
+    background-color: black;
+    text-align: center;
+    color: snow;
+}
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+  }
+  h1{
+      color: rgba(255, 234, 0, 0.813);
+      font-family:Jazz LET, fantasy;
+      font-weight: bold;
+      font-size: 60px;
+      padding-top:1% ;
+      padding-left: 30%;
+  }
+  h2{
+      text-transform: uppercase;
+      color:rgba(255, 0, 0, 0.53);
+      font-family: OCR A Std, monospace;
+      padding-bottom: 2%;
+      font-size: 40px;
+  }
+  #table{
+      display: flex;
+      justify-content: center;
+      padding: 3%;
+  }
+  table {
+      border-collapse: collapse;
+      width: 85%;
+      padding: 5%;
+      
+    }
+    tr,td img{
+      width: 100%;
+      height: 100%;
+    }
+    
+    th, td {
+      border: 1px solid gold;
+      padding: 8px;
+      text-align: center;
+    }
+    
+    th {
+      background-color: gold;
+      color: rgb(0, 0, 0);
+    }
+    
+  p {
+      text-align: center;
+      font-size: 20px;
+      margin: 1%;
+      display: flex;
+      justify-content: center;
+  }
+  #equipmentForm, label{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    color:white;
+    margin: 1%;
+  }
+  .btn{
+    background-color: black;
+    color: aliceblue;
+    
+  }
+  #travelDestinations, a{
+    margin:2%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  a,.flag{
+    width: 40%;
+  }
+  
+  h3{
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgba(255, 0, 0, 0.53);
+    margin: 1%;
+  }
+  .facts{
+    text-align: justify;
+    padding-left: 5%;
+  }
+  
+  #facts{
+    display: flex;
+    justify-content:start;
+    align-items: start;
+  
+  }
+  ul li{
+    list-style-type:circle;
+    font-size: larger;
+    margin: 3%;
+    text-align: justify;
+  }
