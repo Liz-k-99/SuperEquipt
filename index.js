@@ -35,54 +35,58 @@ document.addEventListener('DOMContentLoaded', () => {
     foodSearchBtn.addEventListener('click', (event) => {
         searchFood()
     })
-async function getFood() {
-    try {
-        const searchTerm = document.getElementById('searchInput').value;
-        const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${searchTerm}&page_size=10&json=true`;
-        const response = await fetch(url);
-        const result = await response.json();
-        displayFoodResults(result);
-    } catch (error) {
-        console.error(error);
+    async function getFood() {
+        try {
+            const searchTerm = document.getElementById('searchInput').value;
+            const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${searchTerm}&page_size=10&json=true`;
+            const response = await fetch(url);
+            const result = await response.json();
+            displayFoodResults(result);
+        } catch (error) {
+            console.error(error);
+        }
     }
-}
-function searchFood() {
-    foodList.textContent = ''
+    function searchFood() {
+        foodList.textContent = ''
         getFood();
-    
-}
 
-function displayFoodResults(result) {
-    const foodList = document.getElementById('foodList');
-
-    if (!result.products || result.products.length === 0) {
-        const li = document.createElement('li');
-        li.textContent = 'No results found';
-        foodList.appendChild(li);
-        return; 
     }
 
-    result.products.slice(0, 3).forEach(product => {
-        const li = document.createElement('li');
-        const foodLabel = document.createElement('span');
-        const foodImage = document.createElement('img');
-        const nutrients = document.createElement('p');
-        foodLabel.textContent = product.product_name;
-        foodImage.src = product.image_url;
+    function displayFoodResults(result) {
+        const foodList = document.getElementById('foodList');
 
-        // Extract nutrient information and format it
-        const nutrientInfo = product.nutriments;
-        const formattedNutrients = Object.entries(nutrientInfo)
-            .map(([key, value]) => `${key}: ${value}`)
-            .join(`\n`);
-        nutrients.textContent = formattedNutrients;
+        if (!result.products || result.products.length === 0) {
+            const li = document.createElement('li');
+            li.textContent = 'No results found';
+            foodList.appendChild(li);
+            return;
+        }
 
-        li.appendChild(foodImage);
-        li.appendChild(foodLabel);
-        li.appendChild(nutrients);
-        foodList.appendChild(li);
+        result.products.slice(0, 3).forEach(product => {
+            const li = document.createElement('li');
+            const foodLabel = document.createElement('h4');
+            const foodImage = document.createElement('img');
+            const nutrients = document.createElement('span');
+            foodLabel.textContent = product.product_name 
+            foodImage.src = product.image_url;
 
+            // Extract nutrient information and format it
+            const nutrientInfo = product.nutriments;
+            const formattedNutrients = Object.entries(nutrientInfo)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(', ');
+            nutrients.textContent = formattedNutrients;
 
-    })
-}
+            li.append(foodImage);
+            li.append(foodLabel);
+            li.appendChild(nutrients);
+            foodList.appendChild(li);
+
+            foodImage.style.width = "20%"
+            foodImage.style.height = '25%'
+        
+            
+
+        })
+    }
 })

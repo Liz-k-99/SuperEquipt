@@ -8,13 +8,13 @@ body{
     flex-wrap: wrap;
     justify-content:flex-start;
   }
-  h1{
+ h1{
       color: rgba(255, 234, 0, 0.813);
       font-family:Jazz LET, fantasy;
       font-weight: bold;
       font-size: 60px;
       padding-top:1% ;
-      padding-left: 30%;
+      margin-left: 37%;
   }
   h2{
       text-transform: uppercase;
@@ -22,6 +22,8 @@ body{
       font-family: OCR A Std, monospace;
       padding-bottom: 2%;
       font-size: 40px;
+      display: flex;
+      justify-content: center;
   }
   #table{
       display: flex;
@@ -34,20 +36,22 @@ body{
       padding: 5%;
       
     }
-    tr,td img{
+    img{
       width: 100%;
-      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
     }
     
-    th, td {
+    td{
       border: 1px solid gold;
-      padding: 8px;
-      text-align: center;
+      max-width: 50%;
+     
     }
     
     th {
       background-color: gold;
       color: rgb(0, 0, 0);
+      padding: 1%;
     }
     
   p {
@@ -57,17 +61,24 @@ body{
       display: flex;
       justify-content: center;
   }
+  #activityForm, label{
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: center;
+    align-items: first baseline;
+  }
+
   #equipmentForm, label{
     display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
     color:white;
-    margin: 1%;
+    flex-flow: nowrap;
+    justify-content: center;
+    align-items: first baseline;
   }
   .btn{
     background-color: black;
     color: aliceblue;
-    
+
   }
   #travelDestinations, a{
     margin:2%;
@@ -100,4 +111,10 @@ body{
     font-size: larger;
     margin: 3%;
     text-align: justify;
+  }
+  #foodList{
+    align-items: center;
+  }
+  h4{
+    color: purple;
   }

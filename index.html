@@ -21,9 +21,10 @@
 
     <main>
 
-        <h2>Get Equipt-Stay Courageous</h2>
-        <p>Super Equipt has you sorted, whether you're going on a short and sweet adventure or your next epic adventure.
-            Whatever the adventure might be, Super Equipt will keep your adventures organised and stress free</p>
+        <h2>Get Equipt<br>Stay Courageous</h2>
+        <p>Whatever the adventure might be, Super Equipt has all the necessary tools to make your next adventure
+            epic!<br>
+            Log all your activities and equipment in one place</p>
         <div id="table">
             <table>
                 <tr>
@@ -31,16 +32,17 @@
                     <th>Equipment</th>
                 </tr>
                 <tr>
-                    <td><img id="activityPic" src="pics/running.jpg" alt="person running">
+                    <td>
+                        <img id="activityPic" src="pics/running.jpg" alt="person running">
                         <form id="activityForm">
-                            <label for="activities">Please enter your activity</label>
+                            <label for="activities">Enter your activities: </label>
                             <input id="activities" type="text" name="Activity" required minlength="1">
                             <input class="btn" type="submit" value="Enter">
                         </form>
                     </td>
                     <td><img id="equipmentPic" src="pics/bike.jpg" alt="bike in sunset">
                         <form id="equipmentForm">
-                            <label for="equipment">What equipment will you need?</label>
+                            <label for="equipment">Required equipment: </label>
                             <input id="equipment" type="text" name="Equipment" required minlength="1">
                             <input class="btn" type="submit" value="Enter">
                         </form>
@@ -65,24 +67,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Accommodation</th>
                     <th>Food</th>
+                    <th>Accommodation </th>
                 </tr>
                 <tr>
-                    <td><img id="accommodatin" src="pics/accommodation.jpg" alt="cave with moon in view"></td>
-                    <td><img id="food" src="pics/food.jpg" alt="plater of food"></td>
+                    <td>
+                        <img id="food" src="pics/food.jpg" alt="plater of food">
+                        <input type="text" id="searchInput" placeholder="Search for a food">
+                        <button id="findFood">Search</button>
+                    </td>
+                    <td>
+                        <img id="accommodatin" src="pics/accommodation.jpg" alt="cave with moon in view">
+                    </td>
                 </tr>
             </table>
         </div>
-
-        <!-- HTML form for user input -->
-        <form id="searchForm">
-            <label for="demo">activity</label>
-            <input type="text" id="demo1" name="demo1">
-            <label for="demo">equipment</label>
-            <input type="text" id="demo2" name="demo2">
-            <input type="submit" value="submit">
-        </form>
+        <div id="foodContainer">
+            <ul id="foodList"></ul>
+        </div>
 
         <h3>Where will your next adventure take place?</h3>
         <p>To help you get prepared check out the links below</p>
@@ -100,7 +102,8 @@
                 <img class="flag" src="pics/europeTrain.jpg" alt="Train">
             </a>
         </div>
-
+        <h3 class="facts">Adventure Facts</h3>
+        <div id="facts">
             <ul>
                 <li>30 days is the approximate time one can live without food</li>
                 <li>Add 37 to the number of chirps a cricket makes in 15 seconds to determine the approximate
@@ -114,12 +117,9 @@
         </div>
     </main>
     <footer>
-        <input type="text" id="searchInput" placeholder="Search for a food">
-    <button id="findFood">Search</button>
-    
-    <ul id="foodList"></ul>
+
     </footer>
-    
+
 </body>
 
 </html>
