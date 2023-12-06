@@ -1,161 +1,218 @@
-body{
+body {
     background-color: black;
     text-align: center;
     color: snow;
 }
-.title{
+
+.title {
     display: flex;
     flex-wrap: wrap;
-    justify-content:flex-start;
-  }
- h1{
-      color: rgba(255, 234, 0, 0.813);
-      font-family:Jazz LET, fantasy;
-      font-weight: bold;
-      font-size: 60px;
-      padding-top:1% ;
-      margin-left: 37%;
-  }
-  h2{
-      text-transform: uppercase;
-      color:rgba(255, 0, 0, 0.53);
-      font-family: OCR A Std, monospace;
-      padding-bottom: 2%;
-      font-size: 40px;
-      display: flex;
-      justify-content: center;
-  }
-  #table{
-      display: flex;
-      justify-content: center;
-      padding: 3%;
-  }
-  table {
-      border-collapse: collapse;
-      width: 85%;
-      padding: 5%;
-      
-    }
-    img{
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
-    td{
-      border: 1px solid gold;
-      max-width: 50%;
-     
-    }
-    
-    th {
-      background-color: gold;
-      color: rgb(0, 0, 0);
-      padding: 1%;
-    }
-    
-  p {
-      text-align: center;
-      font-size: 20px;
-      margin: 1%;
-      display: flex;
-      justify-content: center;
-  }
+    justify-content: flex-start;
+}
 
-label{
-    color:white;
+h1 {
+    color: rgba(255, 234, 0, 0.813);
+    font-family: Jazz LET, fantasy;
+    font-weight: bold;
+    font-size: 85px;
+    padding-top: 2%;
+    margin-left: 33%;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: rgba(255, 0, 0, 0.53);
+    /* font-family: OCR A Std, monospace; */
+    padding-bottom: 2%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#table {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    padding: 5%;
+
+}
+
+img {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+td {
+    border: 1px solid gold;
+    max-width: 50%;
+
+}
+
+th {
+    background-color: gold;
+    color: rgb(0, 0, 0);
+    padding: 1%;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    color: white;
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     margin-right: 7%;
 
-  }
-  .btn{
+}
+
+.btn {
     background-color: black;
     color: aliceblue;
 
-  }
-  #travelDestinations, a{
-    margin:2%;
+}
+
+#travelDestinations,
+a {
+    margin: 2%;
     display: flex;
     justify-content: space-evenly;
-  }
-  a,.flag{
+}
+
+a,
+.flag {
     width: 40%;
-  }
-  
-  h3{
+}
+
+h3 {
     font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:rgba(255, 0, 0, 0.53);
+    color: rgba(255, 0, 0, 0.53);
     margin: 1%;
-  }
-  .facts{
+}
+
+.facts {
     text-align: justify;
     padding-left: 5%;
-  }
-  
-  #facts{
+}
+
+#facts {
     display: flex;
-    justify-content:start;
+    justify-content: start;
     align-items: start;
-  
-  }
-  ul li{
-    list-style-type:circle;
+
+}
+
+ul li {
+    list-style-type: circle;
     font-size: larger;
     margin: 3%;
     text-align: justify;
-  }
-  #foodList{
-    align-items: center;
-  }
-  h4{
-    color: purple;
-  }
+}
 
-  @media only screen and (max-device-width: 900px) {
-    h1{
+#foodList > li {
+    align-items: center;
+    list-style: none;
+    
+}
+
+h4 {
+    color: purple;
+}
+
+.foodContainer {
+    position: relative;
+    display: inline-block; /* Ensures the dropdown elements are displayed in a line */
+}
+
+#dropdownBar{
+    background-color: white;
+    color: black;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Additional styling as needed */
+}
+
+.foodContainer:hover .options {
+    display: contents; /* Show options when hovering over .dropdown */
+}
+
+#loadingMsg{
+    display: none;
+}
+
+h5{
+    color: rgba(255, 255, 0, 0.877);
+    font-size: 15px;
+}
+
+
+
+@media only screen and (max-device-width: 650px) {
+    h1 {
         margin-left: 15%;
         font-size: 50px;
     }
-    .title{
+
+    .title {
         display: inline-flex;
     }
-    h2{
+
+    h2 {
         padding-left: 7%;
         justify-content: left;
         font-size: 35px;
         display: inline-grid
     }
-    p{
+
+    p {
         font-size: 15px;
         width: 75%;
         margin-bottom: 5%;
         display: inline-grid
-        
     }
-    table{
-        display:contents;
+
+    table {
+        display: contents;
         width: 100%;
-    
+
     }
-    tr td{
+
+    tr td {
         display: contents;
     }
-    th{
+
+    th {
         display: none;
     }
-    h3{
+
+    h3 {
         margin-top: 5%;
         margin-bottom: 5%;
         font-size: 25px;
         display: inline-block;
-       
+
     }
-    ul li{
+
+    ul li {
         margin-bottom: 3%;
         font-size: 15px;
         margin-left: 0%;
     }
-  }
+}

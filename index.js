@@ -30,10 +30,13 @@ const logEquipment = (equipment1) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const foodList = document.getElementById('foodList');
+    //const foodList = document.getElementById('foodList');
     const foodSearchBtn = document.querySelector('#findFood')
+    const loadingMsg = document.querySelector('#loadingMsg')
     foodSearchBtn.addEventListener('click', (event) => {
+        loadingMsg.style.display='block'
         searchFood()
+        })
     })
     async function getFood() {
         try {
@@ -77,16 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 .join(', ');
             nutrients.textContent = formattedNutrients;
 
-            li.append(foodImage);
+            const filterNutriensts = Object.entries(nutrientInfo)
+                .filter(([key, value]) => value > 0)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(',  ')
+                nutrients.textContent = filterNutriensts;
+
             li.append(foodLabel);
+            li.append(foodImage);
             li.appendChild(nutrients);
             foodList.appendChild(li);
 
             foodImage.style.width = "20%"
-            foodImage.style.height = '25%'
-        
-            
+            foodImage.style.height = '5%'
 
         })
+
+        loadingMsg.style.display = 'none'
+        
     }
-})
+
+    
+
