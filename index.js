@@ -30,14 +30,14 @@ const logEquipment = (equipment1) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    //const foodList = document.getElementById('foodList');
-    const foodSearchBtn = document.querySelector('#findFood')
-    const loadingMsg = document.querySelector('#loadingMsg')
+    const foodSearchBtn = document.querySelector('#findFood');
+    const loadingMsg = document.querySelector('#loadingMsg');
+
     foodSearchBtn.addEventListener('click', (event) => {
-        loadingMsg.style.display='block'
-        searchFood()
-        })
-    })
+        loadingMsg.style.display = 'block';
+        searchFood();
+    });
+
     async function getFood() {
         try {
             const searchTerm = document.getElementById('searchInput').value;
@@ -45,14 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(url);
             const result = await response.json();
             displayFoodResults(result);
+            loadingMsg.style.display = 'none'
         } catch (error) {
             console.error(error);
         }
     }
-    function searchFood() {
-        foodList.textContent = ''
-        getFood();
 
+    function searchFood() {
+        const foodList = document.getElementById('foodList');
+        foodList.textContent = '';
+        getFood();
     }
 
     function displayFoodResults(result) {
@@ -66,39 +68,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         result.products.slice(0, 3).forEach(product => {
-            const li = document.createElement('li');
-            const foodLabel = document.createElement('h4');
-            const foodImage = document.createElement('img');
-            const nutrients = document.createElement('span');
-            foodLabel.textContent = product.product_name 
-            foodImage.src = product.image_url;
-
-            // Extract nutrient information and format it
-            const nutrientInfo = product.nutriments;
-            const formattedNutrients = Object.entries(nutrientInfo)
-                .map(([key, value]) => `${key}: ${value}`)
-                .join(', ');
-            nutrients.textContent = formattedNutrients;
-
-            const filterNutriensts = Object.entries(nutrientInfo)
-                .filter(([key, value]) => value > 0)
-                .map(([key, value]) => `${key}: ${value}`)
-                .join(',  ')
-                nutrients.textContent = filterNutriensts;
-
-            li.append(foodLabel);
-            li.append(foodImage);
-            li.appendChild(nutrients);
+            const li = createFoodListItem(product);
             foodList.appendChild(li);
-
-            foodImage.style.width = "20%"
-            foodImage.style.height = '5%'
-
-        })
-
-        loadingMsg.style.display = 'none'
-        
+        });
     }
 
-    
+    function createFoodListItem(product) {
+        const li = document.createElement('li');
+        const foodLabel = document.createElement('h4');
+        const foodImage = document.createElement('img');
+        const nutrients = document.createElement('span');
+
+        foodLabel.textContent = product.product_name;
+        foodImage.src = product.image_url;
+
+        const formattedNutrients = formatNutrients(product.nutriments);
+        nutrients.textContent = formattedNutrients;
+
+        li.append(foodLabel, foodImage, nutrients);
+        foodImage.style.display = 'block';
+        foodImage.style.width = '10%';
+        foodImage.style.height = '15%';
+
+        return li;
+    }
+
+    function formatNutrients(nutrientInfo) {
+        return Object.entries(nutrientInfo)
+            .filter(([key, value]) => value > 0)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join(', ');
+    }
+
+    const sizeIncrease = (element) => {
+        element.addEventListener('mouseover', () => {
+        element.style.transform = 'scale(1.2)'
+    });
+    };
+
+    const sizeDecrease = (element) => {
+        element.addEventListener('mouseout', () =>{
+            element.style.transform = 'scale(1)'
+        })
+    }
+
+    const nutrients = document.querySelector('.flag')
+    sizeIncrease(nutrients);
+    sizeDecrease(nutrients)
+
+});
+
+
+
 
